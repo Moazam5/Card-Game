@@ -8,48 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    var viewModel : EmojiMemoryGame
     var body: some View {
         
-        
-       
-                HStack
-                {
-                
-                    ForEach(0..<4) { index in
-                        CardView(isFaceUp: true)
-                    }
-                
-            
-         }
-   
+        HStack
+        {
+            ForEach(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.choose(card: card)
+                }
+            }
+        }
         .foregroundColor(.orange)
         .padding()
     }
-    
-    
 }
 
 struct CardView : View {
-    var isFaceUp : Bool
+    var card : CardGame<String>.Card
+
     var body : some View
     {
+        
         ZStack {
-            if isFaceUp
+            if card.isFaceUp
             {
-                            RoundedRectangle(cornerRadius: 10).fill(Color.white)
-                            RoundedRectangle(cornerRadius: 10).stroke()
-                            Text("👻").font(Font.largeTitle)
+                RoundedRectangle(cornerRadius: 10).fill(Color.white)
+                RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3.0)
+                Text(card.content).font(Font.largeTitle)
             }
             else
             {
                 RoundedRectangle(cornerRadius: 10).fill()
-
             }
-            
-
-
-
-            }
+        }
     }
 }
 //
