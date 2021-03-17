@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-//its a class since its easy to share and we want to share our viewmodel
-//Problem with that is that since everyone is using it, if some view does something nefarious, the
-//changes will be reflects across all the views
 
-class EmojiMemoryGame
+
+class EmojiMemoryGame : ObservableObject
 {
     //shouldn't be called model
-    private var model : CardGame<String> = createCardGame()
+    @Published private var model : CardGame<String> = createCardGame()
     
     static func createCardGame() -> CardGame<String>{
         let emojis : Array<String> = ["💪🏼","🤙🏼", "🖕🏼","☠️", "🎃"]
@@ -22,21 +20,21 @@ class EmojiMemoryGame
         return CardGame<String>(numberOfPairsOfCards : pairCount) { pairIndex in emojis[pairIndex] }
     }
         
-        
+    
         
     
     //MARK:- Access to the Model
     var cards : Array<CardGame<String>.Card> {
-        var cards = model.cards
-        cards.shuffle()
-        return cards
+        model.cards
+//        var cards = model.cards
+//        cards.shuffle()
+//        return cards
         
     }
     
     //MARK:- Intent(s)
     
-    
-    func choose(card : CardGame<String>.Card)
+     func choose(card : CardGame<String>.Card)
     {
         model.choose(card: card)
     }

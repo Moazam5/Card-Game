@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var viewModel : EmojiMemoryGame
+struct CardGameView: View {
+    @ObservedObject var viewModel : EmojiMemoryGame
     var body: some View {
         
         HStack
