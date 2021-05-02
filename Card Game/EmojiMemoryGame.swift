@@ -3,15 +3,14 @@
 //  Card Game
 //
 //  Created by Moazam Mir on 2/22/21.
-//
+//  This is the View Model
 
 import SwiftUI
-
 
 class EmojiMemoryGame : ObservableObject
 {
     //shouldn't be called model
-    @Published private var model : CardGame<String> = createCardGame()
+    @Published private var model: CardGame<String> = createCardGame()
     
     static func createCardGame() -> CardGame<String>{
         let emojis : Array<String> = ["💪🏼","🤙🏼", "🖕🏼","☠️", "🎃"]
