@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var viewModel : EmojiMemoryGame
+struct CardGameView: View {
+    @ObservedObject var viewModel : EmojiMemoryGame
     var body: some View {
         
         HStack
         {
             ForEach(viewModel.cards) { card in
-                CardView(card: card).onTapGesture {
+                CardView(card: card)
+                    .onTapGesture {
                     viewModel.choose(card: card)
                 }
             }
@@ -44,7 +45,6 @@ struct CardView : View {
                 RoundedRectangle(cornerRadius: 10).fill()
             }
         }.aspectRatio(2/3, contentMode: .fit)
-        //
     }
 }
 //

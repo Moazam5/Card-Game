@@ -13,7 +13,7 @@ struct Card_GameApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: game)
+            CardGameView(viewModel: game)
         }
     }
 }
