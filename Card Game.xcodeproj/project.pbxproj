@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5953A92125E3857200078583 /* CardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5953A92025E3857200078583 /* CardGame.swift */; };
+		5953A92125E3857200078583 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5953A92025E3857200078583 /* MemoryGame.swift */; };
 		5953A92925E3879D00078583 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5953A92825E3879D00078583 /* EmojiMemoryGame.swift */; };
 		5961955025DCBE700068CDBF /* Card_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5961954F25DCBE700068CDBF /* Card_GameApp.swift */; };
 		5961955225DCBE700068CDBF /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5961955125DCBE700068CDBF /* CardGameView.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5953A92025E3857200078583 /* CardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGame.swift; sourceTree = "<group>"; };
+		5953A92025E3857200078583 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		5953A92825E3879D00078583 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		5961954C25DCBE700068CDBF /* Card Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5961954F25DCBE700068CDBF /* Card_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_GameApp.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		5961954E25DCBE700068CDBF /* Card Game */ = {
 			isa = PBXGroup;
 			children = (
-				5953A92025E3857200078583 /* CardGame.swift */,
+				5953A92025E3857200078583 /* MemoryGame.swift */,
 				5953A92825E3879D00078583 /* EmojiMemoryGame.swift */,
 				596B384726016140006D2136 /* Grid.swift */,
 				596B384226015EB6006D2136 /* Array+Extension.swift */,
@@ -274,7 +274,7 @@
 				5961955225DCBE700068CDBF /* CardGameView.swift in Sources */,
 				596B384326015EB6006D2136 /* Array+Extension.swift in Sources */,
 				5961955025DCBE700068CDBF /* Card_GameApp.swift in Sources */,
-				5953A92125E3857200078583 /* CardGame.swift in Sources */,
+				5953A92125E3857200078583 /* MemoryGame.swift in Sources */,
 				5953A92925E3879D00078583 /* EmojiMemoryGame.swift in Sources */,
 				596B384826016140006D2136 /* Grid.swift in Sources */,
 			);

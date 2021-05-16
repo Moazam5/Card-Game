@@ -28,7 +28,7 @@ struct CardGameView: View {
 }
 
 struct CardView : View {
-    var card : CardGame<String>.Card
+    var card : MemoryGame<String>.Card
 
     var body : some View
     {
