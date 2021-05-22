@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CardGameView: View {
     @ObservedObject var viewModel : EmojiMemoryGame
+
     var body: some View {
-        
-        HStack
-        {
+         HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card)
                     .onTapGesture {
@@ -22,34 +21,39 @@ struct CardGameView: View {
         }
         .foregroundColor(.orange)
         .padding()
-               .font(viewModel.cards.count > 5 ? Font.title : Font.largeTitle)
-      
+        .font(viewModel.cards.count > 5 ? Font.title : Font.largeTitle)
     }
 }
 
 struct CardView : View {
     var card : MemoryGame<String>.Card
 
-    var body : some View
-    {
-        
-        ZStack {
-            if card.isFaceUp
-            {
-                RoundedRectangle(cornerRadius: 10).fill(Color.white)
-                RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3.0)
-                Text(card.content)
-            }
-            else
-            {
-                RoundedRectangle(cornerRadius: 10).fill()
-            }
-        }.aspectRatio(2/3, contentMode: .fit)
+    var body : some View {
+        GeometryReader(content: { geometry in
+            ZStack {
+                if card.isFaceUp {
+                    RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+                    RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+                    Text(card.content)
+                }  else {
+                    RoundedRectangle(cornerRadius: cornerRadius).fill()
+                }
+            }.font(Font.system(size: fontSize(for: geometry.size)))
+        })
+    }
+//MARK:- Drawing Constants
+    let cornerRadius: CGFloat = 10
+    let edgeLineWidth: CGFloat = 3
+    let fontScaleFactor: CGFloat = 0.75
+
+    func fontSize(for size: CGSize) -> CGFloat {
+        return (min(size.height, size.width) * fontScaleFactor)
     }
 }
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
+struct CardGameView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = EmojiMemoryGame()
+        CardGameView(viewModel: viewModel)
+    }
+}

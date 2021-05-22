@@ -12,29 +12,20 @@ class EmojiMemoryGame : ObservableObject
     //shouldn't be called model
     @Published private var model: MemoryGame<String> = createCardGame()
     
-    static func createCardGame() -> MemoryGame<String>{
+    static func createCardGame() -> MemoryGame<String> {
         let emojis : Array<String> = ["💪🏼","🤙🏼", "🖕🏼","☠️", "🎃"]
         let pairCount = Int.random(in: 2...5)
         print("Pair count is", pairCount)
         return MemoryGame<String>(numberOfPairsOfCards : pairCount) { pairIndex in emojis[pairIndex] }
     }
-        
-    
-        
-    
+
     //MARK:- Access to the Model
     var cards : Array<MemoryGame<String>.Card> {
         model.cards
-//        var cards = model.cards
-//        cards.shuffle()
-//        return cards
-        
-    }
-    
+ }
     //MARK:- Intent(s)
     
-     func choose(card : MemoryGame<String>.Card)
-    {
+     func choose(card : MemoryGame<String>.Card) {
         model.choose(card: card)
     }
 }
